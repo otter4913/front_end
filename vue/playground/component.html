@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <app-header></app-header>
+        <app-content></app-content>
+        <app-footer></app-footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        //전역 컴포넌트 등록 방식
+        // 컴포넌트 생성 문법
+        //Vue.component('컴포넌트 이름', {컨포넌트 내용});
+        Vue.component('app-header', {
+            template: '<h1>Header</h1>'
+        });
+        Vue.component('app-content', {
+            template : '<div>Content</div>'
+        });
+
+        new Vue({
+            el: '#app',
+            // 지역 컴포넌트 등록 방식
+            components: {
+                //'키': 값
+                //'컴포넌트 이름': 컴포넌트 내용
+                'app-footer' : {
+                    template: '<footer>Footer</footer>'
+                }
+            }
+        });
+
+    </script>
+
+    <!---
+        전역 컴포넌트와 지역 컴포넌트의 차이
+        지역컴포넌트는 하단에 어떤거이 등록되어있는지 알수있다
+        싱블바이컴포넌트 개발일때
+
+        전역컴포넌트는 플러그인, 라이브러리 형태로 전역으로 사용할때만 사용
+
+
+        
+    -->
+
+</body>
+</html>
