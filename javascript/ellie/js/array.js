@@ -86,3 +86,82 @@ fruits.push('apple'); // [apple', 'melon', 'strawberry', 'kiwi', 'lemon', 'apple
 console.log(fruits.indexOf('apple')); // 0
 console.log(fruits.lastIndexOf('apple')); // 5
 
+
+
+
+
+
+// array 공부
+// .length; = number으로 출력, 배열의 길이를 나타냄
+const studyArray = ['a','b','c','d'];
+console.log(studyArray.length); // 4
+
+// .toString(); = string으로 출력
+console.log(studyArray.toString()); //a,b,c,d
+
+// .toLocaleString(); = string으로 출력 - 로케일 설정을 따름(ex - 시간?!)
+console.log(studyArray.toLocaleString()); //a,b,c,d
+
+// .join('원하는 모양'); = string으로 출력 - 모든 배열을 하나의 문자열로 표현하는데 '원하는모양'을 넣어서 출력 가능, 디폴트는 ,이다.
+console.log(studyArray.join()); // a,b,c,d
+console.log(studyArray.join('-')); // a-b-c-d
+
+// .reverse(); = 배열을 뒤집음 / 인덱스 뒤집기
+const reverseArray2 = studyArray.reverse();
+console.log(reverseArray2); //  ["d", "c", "b", "a"]
+console.log(reverseArray2[1]); // c
+
+// .slice(); = start(없으면 0)부터 end(미포함)까지 복사하여 새로운 배열로 반환
+// .slice(start, end);
+console.log(studyArray.slice()); // ["d", "c", "b", "a"]
+console.log(studyArray.slice(1,3)); // ["c", "b"
+
+// .sort(); = 문자열로 반환하여 비교한 후 배열을 새로 정렬함 / 기본은 유니코드 포인트 순서로 비교됨
+// .sort(function(a, b) { 배열 로직 }); = 배열 로직 대로 정렬 됨.
+// - (a, b의 인덱스 값비교) a < b => 0보다 작을때, a = b => 0일때, a > b => 0보다 클때
+const sortTest1 = [1, 100, 32, '22', '44', 'a'];
+console.log(sortTest1.sort()); // [1, 100, "22", 32, "44", "a"]
+function compareNumbers(a,b) { // 오름차순
+    return a - b;
+}
+console.log(sortTest1.sort(compareNumbers)); // [1, "22", 32, "44", 100 , "a"] - 숫자 인덱스 < 문자 인덱스
+console.log(sortTest1.sort((a, b) => b - a)); //  내림차순 - [100, "44", 32, "22", 1, "a"]
+
+// .every(함수); = 배열 안의 모든 요소가 주어진 판별 함수를 통과하는지 테스트 / 빈 배열은 무조건  true
+const everyFunction1 = (vurrentValue) => vurrentValue < 30;
+const everyFunction2 = (vurrentValue) => vurrentValue < 50;
+const everyTest1 = [1, 13, 32, '22', '44'];
+console.log(everyTest1.every(everyFunction1)); // false
+console.log(everyTest1.every(everyFunction2)); // true
+
+// .some(함수); = 배열 안의 어떤 요소라도 주어진 판별 함수를 통과하는지 테스트 합니다. / 빈 배열은 무조건 false
+const someFunction1 = (vurrentValue) => vurrentValue < 30;
+const someFunction2 = (vurrentValue) => vurrentValue < 50;
+const someTest1 = [1, 13, 32, '22', '44', 'a'];
+console.log(someTest1.some(someFunction1)); // true
+console.log(someTest1.some(someFunction2)); // true
+
+// .map(함수); = 배열 내의 모든 요소 각각에 대하여 주어진 함수를 호출한 결과를 모아서 새로운 배열을 반환
+const mapTest1 = [1, 13, 32, '22', '44', 'a'];
+console.log(mapTest1.map((a) => a * 2 )); // [2, 26, 64, 44, 88] - 숫자의 경우 문자열이여도 숫자로 인식 / 문자열은 nan으로 반환
+
+// .filter(함수); = 주어진 함수를 통과하는 요소들을 모아서 새롱누 배열로 반환
+const filterTest1 = [1, 13, 32, '22', '44', 'a'];
+console.log(filterTest1.filter((a) => a < 40 )); // [1, 13, 32, "22"]
+
+// .reduce(함수); = 배열의 각 요소에 대해 주어진 리듀서함수를 실행하고, 하나의 결과 값을 반환 // 왼쪽부터 시작
+const reduceTest1 = [1, 2, 3, '4', 'a'];
+const reduceTest2 = [[1, 2], [3, 4], [5]];
+const reduce = (a, b) => a + b;
+console.log(reduceTest1.reduce(reduce)); // 64a = 1+2+3+'4'+'a'
+console.log(reduceTest1.reduce(reduce, 5)); // 114a = 5+1+2+3+'4'+'a'
+console.log(reduceTest2.reduce(reduce)); // 1,23,45
+console.log(reduceTest2.reduce(reduce, 5)); // 51,23,45
+
+// reduceRight(함수); = .reduce(함수);와 동일하나 오른쪽 부터 시작
+console.log(reduceTest1.reduceRight(reduce)); // a4321 = 'a'+'4'+3+2+1
+console.log(reduceTest1.reduceRight(reduce, 5)); // 5a4321 = 5+a'+'4'+3+2+1
+console.log(reduceTest2.reduceRight(reduce)); // 53,41,2
+console.log(reduceTest2.reduceRight(reduce, 5)); // 553,41,2
+
+
