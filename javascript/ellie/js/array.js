@@ -3,7 +3,7 @@
 // Array
 
 // 1. Declaration - 배열 생성 방법
-const arr1 =new Array();
+const arr1 = new Array();
 const arr2 = [1, 2];
 
 
@@ -106,7 +106,7 @@ console.log(studyArray.toLocaleString()); //a,b,c,d
 console.log(studyArray.join()); // a,b,c,d
 console.log(studyArray.join('-')); // a-b-c-d
 
-// .reverse(); = 배열을 뒤집음 / 인덱스 뒤집기
+// .reverse(); = 배열을 뒤집음 / 인덱스 뒤집기 !!! 원래 배열도 변경됨
 const reverseArray2 = studyArray.reverse();
 console.log(reverseArray2); //  ["d", "c", "b", "a"]
 console.log(reverseArray2[1]); // c
@@ -114,7 +114,7 @@ console.log(reverseArray2[1]); // c
 // .slice(); = start(없으면 0)부터 end(미포함)까지 복사하여 새로운 배열로 반환
 // .slice(start, end);
 console.log(studyArray.slice()); // ["d", "c", "b", "a"]
-console.log(studyArray.slice(1,3)); // ["c", "b"
+console.log(studyArray.slice(1,3)); // ["c", "b"]
 
 // .sort(); = 문자열로 반환하여 비교한 후 배열을 새로 정렬함 / 기본은 유니코드 포인트 순서로 비교됨
 // .sort(function(a, b) { 배열 로직 }); = 배열 로직 대로 정렬 됨.
@@ -145,7 +145,7 @@ console.log(someTest1.some(someFunction2)); // true
 const mapTest1 = [1, 13, 32, '22', '44', 'a'];
 console.log(mapTest1.map((a) => a * 2 )); // [2, 26, 64, 44, 88] - 숫자의 경우 문자열이여도 숫자로 인식 / 문자열은 nan으로 반환
 
-// .filter(함수); = 주어진 함수를 통과하는 요소들을 모아서 새롱누 배열로 반환
+// .filter(함수); = 주어진 함수를 통과하는 요소들을 모아서 새로운 배열로 반환
 const filterTest1 = [1, 13, 32, '22', '44', 'a'];
 console.log(filterTest1.filter((a) => a < 40 )); // [1, 13, 32, "22"]
 
