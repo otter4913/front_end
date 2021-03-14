@@ -1,22 +1,42 @@
-// 별찍기 
- for(var star = 1; star <= 5; star += 1){
-    document.write('*'.repeat(star) + '<br>');
- }
- document.write('<br>');
- for(var star2 = 5; star2 >= 1; star2 -= 1){
-    document.write('*'.repeat(star2) + '<br>');
- }
- document.write('<br>');
- for(var star3 = 10; star3 >= 2; star3 -= 2){
-    document.write('*'.repeat(star3) + '<br>');
- }
- document.write('<br>');
- for(var star4 = 1; star4 <= 16; star4 *= 2){
-    document.write('*'.repeat(star4) + '<br>');
- }
- for(var star5 = 5; star5 >= 1; star5 -= 1){
-    console.log(' '.repeat(5 - star5) + '*'.repeat(star5));
- }
- for(var star6 = 9; star6 >= 1; star6 -= 2){
-    console.log(' '.repeat((9 - star6)/2) + '*'.repeat(star6));
- }
+let seletBody = document.body;
+    quizBox = document.querySelector('.quiz_box');
+    form = document.querySelector('.form');
+    answer = document.querySelector('.answer');
+    btn = document.querySelector('.btn');
+    resultBox = document.querySelector('.resultBox');
+    num1 = Math.ceil(Math.random() * 9) + 1;
+    num2 = Math.ceil(Math.random() * 9) + 1;
+    quiz = num1 * num2;
+    quizBox.append(`${num1} x ${num2} = ?`);
+
+    // btn.addEventListener('click', (e) => {
+    //     e.preventDefault();
+    //     if(quiz === Number(answer.value)) {
+    //         resultBox.textContent = '딩동댕';
+    //         num1 = Math.ceil(Math.random() * 9) + 1;
+    //         num2 = Math.ceil(Math.random() * 9) + 1;
+    //         quiz = num1 * num2;
+    //         quizBox.textContent = `${num1} x ${num2} = ?`;
+    //         answer.value = '';
+    //         answer.focus();
+    //     } else {
+    //         resultBox.textContent = '땡';
+    //         answer.value = '';
+    //         answer.focus();
+    //     }
+    // });
+
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        if(quiz === Number(answer.value)) {
+            resultBox.textContent = '딩동댕';
+            num1 = Math.ceil(Math.random() * 9) + 1;
+            num2 = Math.ceil(Math.random() * 9) + 1;
+            quiz = num1 * num2;
+            quizBox.textContent = `${num1} x ${num2} = ?`;
+            answer.value = '';
+        } else {
+            resultBox.textContent = '땡';
+            answer.value = '';
+        }
+    });
