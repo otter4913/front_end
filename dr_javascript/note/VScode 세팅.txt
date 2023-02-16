@@ -1,0 +1,44 @@
+설치 및 익스텐션 추천 영상: https://youtu.be/bS9yTI2fC0w
+단축키 배우기: https://youtu.be/EVxCdenPbFs
+
+<익스텐션>
+prettier
+material icon
+material theme
+live server
+
+<세팅>
+ctrl + , / cmd + ,
+
+quote > javascript, typescript, prieeter == single
+
+
+단축키 정리 (맥용) ⇢ https://code.visualstudio.com/shortcuts/keyboard-shortcuts-macos.pdf
+단축키 정리 (윈도우용) ⇢ https://code.visualstudio.com/shortcuts/keyboard-shortcuts-windows.pdf
+<단축키> window = ctrl / mac = cmd
+command palette  == ctrl + shift + p , F1
+quick open == ctrl + p
+user settomgs == ctrl + ,
+sidebar == ctrl + b
+terminal == ctrl + `
+keyboard Shortcuts == ctrl + k + s
+
+파일 맨위 맨아래 == ctrl + home or end
+줄 맨앞 맨뒤 == home or end
+줄 선택 == shift home + end
+단어별 이동 == ctrl + 방향키
+선택 == ctrl + shift + 방향키
+줄 복사 == ctrl + c
+줄 잘라내기 == ctrl + x
+줄 이동 == alt + 방향키
+동일단어선택 == ctrl + D
+다중선택 == shift + alt + 드래그 or 클릭 / shift + alt + I 맨뒤로 선택
+이전 커서위치 이동 == ctrl + U
+
+<kite>
+자동완성
+
+
+<nodemon>
+npm install nodemon -g
+nodemon main.js

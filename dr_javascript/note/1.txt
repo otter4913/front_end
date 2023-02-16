@@ -1,0 +1,21 @@
+*javascript는 엔진을 통해 실행!
+webAPIs!!!
+Node.js ApI!!
+
+* 인터프리터
+=> 런타임시 코드를 한줄씩 번역해서 실행하는 것!
+-- 초반 실행은 빠르지만, 실행시간은 조금 느릴 수 있다.
+
+*compiler
+=> 시작전 코드 번역작업!
+컴파일러를 통해 코드를 번역하여 실행파일은 만들어 실행
+-- 컴파일링 시간이 오래걸릴 수 있으나 한번 만들어신 실행파일을 통해 실행되므로 초기 이후엔 속도가 빠름
+
+
+
+엔진 = [ie:chakra, edge:V8, node:V8, chrom:V8, safari:jacascript core, firefox:spidermonkey]
+
+*ECMAscript
+=> 문법의 규격사항, 표준사항
+히스토리 = https://en.wikipedia.org/wiki/ECMAScript
+버전별 문법 지원 현황 확인: https://kangax.github.io/compat-table/es5/
